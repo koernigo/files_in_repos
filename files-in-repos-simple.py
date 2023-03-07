@@ -97,6 +97,19 @@ display(df)
 
 # COMMAND ----------
 
+# MAGIC %md ### Load file with Koalas
+# MAGIC Koalas requires the absolute file path.
+
+# COMMAND ----------
+
+import os
+import databricks.koalas as ks
+
+df= ks.read_csv(f"file:{os.getcwd()}/data/winequality-red.csv") # "file:" prefix and absolute file path are required for Koalas
+display(df)
+
+# COMMAND ----------
+
 # MAGIC %md ### Load file with PySpark
 # MAGIC PySpark requires the absolute file path.
 
